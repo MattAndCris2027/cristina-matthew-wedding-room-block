@@ -1,0 +1,14 @@
+{
+  "name": "cristina-matthew-room-block",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wedding room block intake site for Cristina and Matthew.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

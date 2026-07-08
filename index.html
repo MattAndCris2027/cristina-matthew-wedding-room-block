@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cristina & Matthew | Wedding Room Block</title>
+    <meta
+      name="description"
+      content="Room block request form for Cristina and Matthew's April 17, 2027 wedding at Armony Marival Resort & Spa - MGallery Punta de Mita."
+    />
+    <link rel="preload" href="assets/armony-marival-pool-hero.jpg" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img class="hero__image" src="assets/armony-marival-pool-hero.jpg" alt="Armony Marival resort pool and oceanfront guest rooms at sunset" />
+      <div class="hero__shade"></div>
+      <nav class="topbar" aria-label="Wedding room block">
+        <a href="#request" class="topbar__link">Request a Room</a>
+      </nav>
+      <div class="hero__content">
+        <p class="eyebrow">April 17, 2027 | Punta de Mita</p>
+        <h1>Cristina & Matthew</h1>
+        <p class="hero__copy">
+          Wedding room block requests for Armony Marival Resort & Spa - MGallery Punta de Mita.
+        </p>
+        <a class="button button--light" href="#request">Start Your Request</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow eyebrow--dark">Room Block Intake</p>
+          <h2 id="intro-title">A simple request process before resort confirmation.</h2>
+        </div>
+        <p>
+          Please share your preferred stay details below. Cristina and Matthew will submit your request to the resort,
+          then the resort will email you directly with availability, a confirmation number, and a secure payment link
+          for the initial deposit.
+        </p>
+      </section>
+
+      <section class="flow" aria-label="Booking flow">
+        <article>
+          <span>01</span>
+          <h3>Send Your Room Request</h3>
+          <p>Submit your preferred dates, room details, and guest names through this intake form.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Submitted to the Resort</h3>
+          <p>Cristina and Matthew will forward the request to Armony Marival for availability review.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Confirm Directly</h3>
+          <p>The resort will email you a confirmation number and payment link for your initial deposit.</p>
+        </article>
+      </section>
+
+      <section id="request" class="request-shell" aria-labelledby="request-title">
+        <div class="request-copy">
+          <p class="eyebrow eyebrow--dark">Guest Details</p>
+          <h2 id="request-title">Room Request Form</h2>
+          <p>
+            No credit card or payment information is collected here. Your reservation is only confirmed after the
+            resort confirms availability and you complete payment directly with the resort.
+          </p>
+        </div>
+
+        <form id="roomRequestForm" class="form">
+          <div class="field">
+            <label for="contactName">Primary contact name</label>
+            <input id="contactName" name="Primary contact name" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="Phone" type="tel" autocomplete="tel" required />
+          </div>
+
+          <div class="field-group">
+            <div class="field">
+              <label for="checkIn">Check-in date</label>
+              <input id="checkIn" name="Check-in date" type="date" required />
+            </div>
+            <div class="field">
+              <label for="checkOut">Check-out date</label>
+              <input id="checkOut" name="Check-out date" type="date" required />
+            </div>
+          </div>
+
+          <div class="field-group field-group--three">
+            <div class="field">
+              <label for="rooms">Number of rooms</label>
+              <input id="rooms" name="Number of rooms" type="number" min="1" max="10" value="1" required />
+            </div>
+            <div class="field">
+              <label for="adults">Adults</label>
+              <input id="adults" name="Number of adults" type="number" min="1" max="20" value="2" required />
+            </div>
+            <div class="field">
+              <label for="minors">Minors ages 7-12</label>
+              <input id="minors" name="Number of minors ages 7-12" type="number" min="0" max="20" value="0" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="guestNames">Guest names per room</label>
+            <textarea
+              id="guestNames"
+              name="Guest names per room"
+              rows="5"
+              placeholder="Room 1: Full names&#10;Room 2: Full names"
+              required
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label for="roomCategory">Preferred room category</label>
+            <select id="roomCategory" name="Preferred room category" required>
+              <option value="">Select a preference</option>
+              <option>Best available room block category</option>
+              <option>Resort view</option>
+              <option>Ocean view</option>
+              <option>Oceanfront</option>
+              <option>Suite</option>
+              <option>Connecting rooms if available</option>
+              <option>Accessible room if available</option>
+              <option>Other - described in notes</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="notes">Notes</label>
+            <textarea
+              id="notes"
+              name="Notes"
+              rows="4"
+              placeholder="Arrival time, bedding preference, accessibility needs, or other room requests"
+            ></textarea>
+          </div>
+
+          <label class="consent">
+            <input id="consent" name="Consent" type="checkbox" required />
+            <span>
+              I understand this information will be shared with the resort for reservation purposes and that no
+              reservation is confirmed until the resort confirms availability and I complete payment directly with the
+              resort.
+            </span>
+          </label>
+
+          <p id="formError" class="form__error" role="alert"></p>
+
+          <button class="button button--dark" type="submit">Submit Room Request</button>
+        </form>
+      </section>
+
+      <section id="confirmation" class="confirmation" hidden aria-live="polite">
+        <p class="eyebrow eyebrow--dark">Request Received</p>
+        <h2>Thank you. Your room request has been received.</h2>
+        <p>
+          Cristina and Matthew will submit your details to the resort. After the resort reviews availability, they will
+          follow up directly by email with next steps, including the confirmation number and payment link for the
+          initial deposit.
+        </p>
+        <a class="button button--dark" href="#request" id="newRequest">Send Another Request</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Cristina & Matthew | April 17, 2027 | Armony Marival Resort & Spa - MGallery Punta de Mita</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
